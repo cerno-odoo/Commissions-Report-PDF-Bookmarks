@@ -10,7 +10,7 @@ Cerno's commissions reports are concatenated into a single PDF that contains man
 client sections back-to-back. Each section starts with a header that looks like:
 
 ```
-Prepared for: Brand Jump LLC
+Prepared for: Sales Rep
 Report Period: April 2026
 ```
 
@@ -23,7 +23,7 @@ pages titled:
 <client> - <period>
 ```
 
-For the example above, the bookmark label is `Brand Jump LLC - April 2026`.
+For the example above, the bookmark label is `Sales Rep - April 2026`.
 
 The original PDF is never modified — the result is saved alongside it as
 `<original name>_bookmarked.pdf`.
@@ -66,7 +66,7 @@ A page is bookmarked **only when both markers are found**. The captured values a
 then run through a small cleanup step that trims either capture at the start of any
 subsequent labeled field — this works around a quirk where `pypdf` occasionally
 concatenates two visually-separate header lines without a newline between them
-(e.g. `Report Period: April 2026Prepared for: Brand Jump LLC`), which would
+(e.g. `Report Period: April 2026Prepared for: Sales Rep`), which would
 otherwise leak the next field's text into the bookmark label.
 
 Once a label has been used, later pages that produce the same label are skipped, so
